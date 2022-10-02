@@ -6,9 +6,10 @@
 int exponentiation(int userNumberA, int userNumberB)
 {
     int result = userNumberA;
+    userNumberB = Math.Abs(userNumberB);
     for(int i = 1; i < userNumberB; i++)
     {
-        result = result * userNumberB;
+         result = result * userNumberB;
     }
     return result;
 }
@@ -16,6 +17,9 @@ int exponentiation(int userNumberA, int userNumberB)
 Console.Write("Введите число А: ");
 int userNumberA = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите число B: ");
-int userNumberB = Convert.ToInt32(Console.ReadLine());
-int result = exponentiation(userNumberA, userNumberB);
+int userNumberB = Convert.ToInt32(Console.ReadLine()); 
+double result = exponentiation(userNumberA, userNumberB);
+
+if(userNumberB > 0)
 Console.WriteLine($"Результат возведения числа {userNumberA} в степень {userNumberB} равен {result}");
+else Console.WriteLine($"Результат возведения числа {userNumberA} в степень {userNumberB} равен {1 / result}");
